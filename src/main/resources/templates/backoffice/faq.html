@@ -1,55 +1,165 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{css/stylesFaq.css}" rel="stylesheet">
     <title>Preguntas Frecuentes - Bodega Galan</title>
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        h2 {
-            color: #4CAF50;
-        }
-        .faq-item {
-            margin-bottom: 20px;
-        }
-        .faq-question {
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .faq-answer {
-            display: none;
-            margin-top: 10px;
-        }
-    </style>
+
 </head>
 <body>
-    <h2>Preguntas Frecuentes - Bodega Galan</h2>
 
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(1)">1. ¿Cuáles son sus horarios de atención?</div>
-        <div class="faq-answer" id="answer1">
-            <p>Nuestros horarios de atención son de lunes a sábado de 8:00 AM a 8:00 PM.</p>
+    <header>
+
+        <div class="header__superior">
+            <div class="logo">
+                <img th:src="@{/img/logo_bodega_galan.png}" alt="Logo">
+                <img src="images/logo_bodega_galan.png" width="50" height="100" alt="Gif" title="Gif" border="0">
+            </div>
+        </div>
+
+        <div class="container__menu">
+
+            <div class="menu">
+
+                <input type="checkbox" id="check__menu">
+
+                <label id="#label__check" for="check__menu">
+
+                    <i class="fas fa-bars icon__menu"></i>
+
+                </label>
+
+                <nav>
+
+                    <ul>
+
+                        <li><a href="menuprincipal.html" id="selected"></a></li>
+                        <li>
+                            <a href="#">Ventas</a>
+                            <ul>
+                                <li><a th:href="@{/backoffice/ventas}">Registrar Venta</a></li>
+                                <li><a th:href="@{/backoffice/registroVentas}">Registro de Ventas</a></li>
+                                <li><a th:href="@{/backoffice/comprobante}">Comprobante de Pago</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Atención al Usuario</a>
+                            <ul>
+                                <li><a th:href="@{/backoffice/faq}">FAQ</a></li>
+                                <li><a  th:href="@{/auth/registrar}">Registro de Usuario</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Proveedores</a>
+                            <ul>
+                                <li><a th:href="@{/backoffice/supplier}">Registrar Proveedores</a></li>
+                                <li><a th:href="@{/backoffice/producto}">Registro de Productos</a></li>
+                            </ul>
+                        </li>
+                        <li><a th:href="@{/backoffice/nosotros}">Nosotros</a></li>
+                        <li><a th:href="@{/auth/login}">Cerrar Sesión</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </header>
+
+    <h1>Preguntas Frecuentes - Bodega Galan</h1>
+
+    <div class="faq-container">
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(1)">1. ¿Cuáles son sus horarios de atención?</div>
+            <div class="faq-answer" id="answer1">
+                <p>Nuestros horarios de atención son de lunes a sábado de 7:00 AM a 11:00 PM.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(2)">2. ¿Ofrecen entrega a domicilio?</div>
+            <div class="faq-answer" id="answer2">
+                <p>Sí, ofrecemos entrega a domicilio en la zona de Villa El Salvador.
+                    Puedes realizar tu pedido por teléfono o en persona.
+                    La entrega suele completarse dentro de las 24 a 48 horas después de realizar el pedido.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(3)">3. ¿Qué tipos de productos venden?</div>
+            <div class="faq-answer" id="answer3">
+                <p>Vendemos una amplia variedad de productos de abarrotes,
+                    incluyendo alimentos, bebidas, productos de limpieza, productos frescos y más.
+                    Consulta nuestro catálogo en línea para ver la gama completa de productos.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(4)">4. ¿Cómo realizo un pedido en línea?</div>
+            <div class="faq-answer" id="answer4">
+                <p>Puedes realizar un pedido en línea a través de nuestro sitio web.
+                    Visita la sección de productos, agrega los artículos que deseas al carrito y
+                    sigue los pasos de pago para completar tu compra de manera segura y rápida.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(5)">5. ¿Cuánto tiempo tarda la entrega a domicilio?</div>
+            <div class="faq-answer" id="answer5">
+                <p>El tiempo de entrega a domicilio suele ser de 1 a 2 días hábiles.
+                    Sin embargo, ten en cuenta que esto puede variar según la ubicación y
+                    la disponibilidad de productos en ese momento.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(6)">6. ¿Aceptan tarjetas de crédito?</div>
+            <div class="faq-answer" id="answer6">
+                <p>Sí, aceptamos tarjetas de crédito y débito tanto para pagos en línea como en
+                    persona en nuestra tienda física. Asegúrate de tener una tarjeta
+                    válida al realizar tu compra.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(7)">7. ¿Ofrecen descuentos para clientes frecuentes?</div>
+            <div class="faq-answer" id="answer7">
+                <p>Sí, contamos con programas de lealtad para nuestros clientes frecuentes.
+                    Al registrarte en nuestro programa, podrás disfrutar de descuentos exclusivos,
+                    ofertas especiales y promociones personalizadas para agradecer tu preferencia.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(8)">8. ¿Puedo devolver un producto si no estoy satisfecho?</div>
+            <div class="faq-answer" id="answer8">
+                <p>Sí, aceptamos devoluciones en productos no utilizados y en su embalaje original.
+                    Comunícate con nuestro servicio al cliente dentro de los 15 días posteriores a la
+                    compra para obtener más detalles y coordinar el proceso de devolución.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(9)">9. ¿Tienen servicio al cliente en línea?</div>
+            <div class="faq-answer" id="answer9">
+                <p>Sí, ofrecemos servicio al cliente en línea a través de nuestro sitio web.
+                    Puedes comunicarte con nosotros mediante el chat en vivo o enviando un correo electrónico a nuestro equipo de soporte.
+                    Estamos aquí para ayudarte con cualquier pregunta o inquietud que puedas tener.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(10)">10. ¿Cómo puedo realizar consultas sobre productos específicos?</div>
+            <div class="faq-answer" id="answer10">
+                <p>Para consultas sobre productos específicos, puedes llamarnos directamente o
+                    utilizar el formulario de contacto en nuestro sitio web.
+                    Nuestro equipo estará encantado de proporcionarte información detallada
+                    sobre cualquier producto que te interese.</p>
+            </div>
         </div>
     </div>
-
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(2)">2. ¿Ofrecen entrega a domicilio?</div>
-        <div class="faq-answer" id="answer2">
-            <p>Sí, ofrecemos entrega a domicilio en la zona de Villa El Salvador. Puedes realizar tu pedido por teléfono o en persona.</p>
-        </div>
-    </div>
-
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(3)">3. ¿Qué tipos de productos venden?</div>
-        <div class="faq-answer" id="answer3">
-            <p>Vendemos una amplia variedad de productos de abarrotes, incluyendo alimentos, bebidas, productos de limpieza y más.</p>
-        </div>
-    </div>
-
     <!-- Agrega más preguntas y respuestas según sea necesario -->
 
     <script>

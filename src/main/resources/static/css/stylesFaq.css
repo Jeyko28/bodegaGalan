@@ -1,22 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
-
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body {
     font-family: 'Roboto', sans-serif;
-    text-decoration: none;
+    padding: 20px;
+    line-height: 1.6;
+    margin: 0;
+    background-color: #3498db;
+    color: #fff;
 }
-
-header{
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #fff;
-}
-/*HEADER SUPERIOR*/
 
 .header__superior{
     max-width: 1200px;
@@ -127,4 +116,40 @@ nav ul li ul{
 
 nav ul li:hover ul{
     visibility: visible;
-2
+}
+
+h1 {
+
+    margin: 0;
+    text-align: center;
+    margin: 45px;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: linear-gradient(to bottom, #3498db, #2ecc71);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    color: #fff;
+}
+
+.faq-item {
+    margin-bottom: 1px solid #ccc;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+.faq-question {
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 24px;
+    margin: 0;
+}
+.faq-answer {
+
+    display: none;
+    margin-top: 10px;
+    font-size: 18px;
+
+}
