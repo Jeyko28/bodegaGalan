@@ -4,7 +4,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0 auto;
     max-width: 1200px;
-    background-image: url(/carpeta_arreglo_nosotros/img/fondo_arbol.png);
+    background-image: "@{source(/img/fondo_arbol.png)";
     background-size: cover;
     background-repeat: no-repeat;
     padding-bottom: 0;
